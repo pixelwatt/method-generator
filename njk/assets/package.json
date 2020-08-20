@@ -1,0 +1,29 @@
+{% import '_globals.html' as globals %}{% extends "_barebones.html" %}{% block content %}{
+  "name": "{{globals.code_textdomain}}",
+  "version": "{{globals.theme_version}}",
+  "description": "{{globals.theme_description}}",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "{{globals.theme_author}}",
+  "license": "LGPL",
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-cache": "^1.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-dart-sass": "^0.9.1",
+    "gulp-imagemin": "^4.0.0",
+    "gulp-jshint": "^2.0.4",
+    "gulp-notify": "^3.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0",
+    "gulp-watch-sass": "^1.2.4",
+    "jshint": "2.8.0"
+  }
+}
+{% endblock %}

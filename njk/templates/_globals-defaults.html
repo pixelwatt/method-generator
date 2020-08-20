@@ -1,0 +1,67 @@
+{# 
+	GLOBAL VARIABLES:
+	Use this file to reconfigure core components of the Sunrise theme prior to building.
+#}
+
+{# Theme Information #}
+{% set theme_name = "Sunrise" %}
+{% set theme_uri = "https://github.com/pixelwatt/sunrise" %}
+{% set theme_description = "A barebones foundation for custom theme development." %}
+{% set theme_version = "1.0.7" %}
+{% set theme_author = "Rob Clark" %}
+{% set theme_author_uri = "https://robclark.io/" %}
+{% set theme_tags = "cmb2, bootstrap" %}
+
+{# Theme Support #}
+{% set theme_support_html5 = true %}
+{% set theme_support_titletag = true %}
+{% set theme_support_thumbnails = true %}
+
+{# Nav Menus #}
+{% set nav_menus = [
+	{ label: "Primary", location: "primary" }
+] %}
+
+{# Custom Image Sizes #}
+{% set image_sizes = [
+	{ name: "Banner", width: 1400, height: 600, cropped: true }
+] %}
+
+{# Required Plugins #}
+{% set require_cmb2 = true %}
+{% set require_classic_editor = true %}
+
+{# Code #}
+{% set code_textdomain = "sunrise" %}
+{% set code_prefix = "sunrise_" %}
+{% set code_layoutclass = "SunriseLayout" %}
+
+{# CSS Classes #}
+{% set css_classes = [
+	{ id: "full_width_outer_col", class: "col-12 col-sm-11" },
+	{ id: "full_width_container", class: "full-width-container" }
+] %}
+
+{# Social Media Network Support #}
+{% set social_options = [
+	{ id: "facebook", label: "Facebook", fa: "fab fa-facebook-f" },
+	{ id: "twitter", label: "Twitter", fa: "fab fa-twitter" },
+	{ id: "linkedin", label: "LinkedIn", fa: "fab fa-linkedin-in" },
+	{ id: "instagram", label: "Instagram", fa: "fab fa-instagram" },
+	{ id: "pinterest", label: "Pinterest", fa: "fab fa-pinterest" },
+	{ id: "youtube", label: "YouTube", fa: "fab fa-youtube" }
+] %}
+
+{# Other #}
+{% set jquery_version = "3.5.1" %}
+{% set googlefonts_css_url = "" %}
+{% set fontawesome_kit_url = "" %}
+
+{# Login Customization #}
+{% set custom_login_enable = true %}
+{% set custom_login_accent = "#7c547d" %}
+{% set custom_login_logo = "assets/images/login-logo.png" %}
+{% set custom_login_logo_width = "252px" %}
+{% set custom_login_logo_height = "63px" %}
+{% set custom_login_bg = "/assets/images/login-bg.jpg" %}
+{% set custom_login_bg_blending = "screen" %}

@@ -1,0 +1,10 @@
+{% import '_globals.html' as globals %}{% extends "_barebones.html" %}{% block content %}/*!
+Theme Name: {{globals.theme_name}}
+Theme URI: {{globals.theme_uri}}
+Description: {{globals.theme_description}}
+Version: {{globals.theme_version}}
+Author: {{globals.theme_author}}
+Author URI: {{globals.theme_author_uri}}
+Tags: {{globals.theme_tags}}
+
+*/{% endblock %}
