@@ -729,13 +729,13 @@ class {{globals.code_layoutclass}} {
 	/*
 	Usage for archive pages:
 	get_header();
-	$layout = new {{globals.code_prefix}}layout;
+	$layout = new {{globals.code_layoutclass}};
 	echo $layout->build_page( '', true );
 	get_footer();
 
 	Usage for single pages:
 	get_header();
-	$layout = new {{globals.code_prefix}}layout;
+	$layout = new {{globals.code_layoutclass}};
 	echo $layout->build_page( $post->ID );
 	get_footer();
 
@@ -755,7 +755,7 @@ class {{globals.code_layoutclass}} {
 * @param array $meta_box
 * @return bool display metabox
 */
-function cmb2_metabox_include_default_page( $display, $meta_box ) {
+function {{globals.code_prefix}}cmb2_metabox_include_default_page( $display, $meta_box ) {
 	if ( ! isset( $meta_box['show_on']['key'] ) ) {
 		return $display;
 	}
@@ -806,7 +806,7 @@ $cmb_options = new_cmb2_box( array(
  * @param array $meta_box
  * @return bool display metabox
  */
-function ed_metabox_include_front_page( $display, $meta_box ) {
+function {{globals.code_prefix}}cmb2_metabox_include_front_page( $display, $meta_box ) {
 	if ( ! isset( $meta_box['show_on']['key'] ) ) {
 		return $display;
 	}
