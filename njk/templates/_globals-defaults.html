@@ -4,10 +4,10 @@
 #}
 
 {# Theme Information #}
-{% set theme_name = "Sunrise" %}
-{% set theme_uri = "https://github.com/pixelwatt/sunrise" %}
+{% set theme_name = "Method" %}
+{% set theme_uri = "https://github.com/pixelwatt/method" %}
 {% set theme_description = "A barebones foundation for custom theme development." %}
-{% set theme_version = "1.0.7" %}
+{% set theme_version = "1.0.9" %}
 {% set theme_author = "Rob Clark" %}
 {% set theme_author_uri = "https://robclark.io/" %}
 {% set theme_tags = "cmb2, bootstrap" %}
@@ -24,17 +24,17 @@
 
 {# Custom Image Sizes #}
 {% set image_sizes = [
-	{ name: "Banner", width: 1400, height: 600, cropped: true }
+	{ name: "header_bg", width: 1400, height: 600, cropped: true }
 ] %}
 
 {# Required Plugins #}
-{% set require_cmb2 = true %}
+{% set require_cmb2 = true %} {# RECOMMENDED #}
 {% set require_classic_editor = true %}
 
 {# Code #}
-{% set code_textdomain = "sunrise" %}
-{% set code_prefix = "sunrise_" %}
-{% set code_layoutclass = "SunriseLayout" %}
+{% set code_textdomain = "method" %}
+{% set code_prefix = "method_" %}
+{% set code_layoutclass = "MethodLayout" %}
 
 {# CSS Classes #}
 {% set css_classes = [
@@ -42,7 +42,7 @@
 	{ id: "full_width_container", class: "full-width-container" }
 ] %}
 
-{# Social Media Network Support #}
+{# Social Media Link Support #}
 {% set social_options = [
 	{ id: "facebook", label: "Facebook", fa: "fab fa-facebook-f" },
 	{ id: "twitter", label: "Twitter", fa: "fab fa-twitter" },
@@ -59,9 +59,10 @@
 
 {# Login Customization #}
 {% set custom_login_enable = true %}
-{% set custom_login_accent = "#7c547d" %}
+{% set custom_login_accent = "#4BFD9F" %}
+{% set custom_login_btn_color = "#000" %}
 {% set custom_login_logo = "assets/images/login-logo.png" %}
-{% set custom_login_logo_width = "252px" %}
-{% set custom_login_logo_height = "63px" %}
+{% set custom_login_logo_width = "250px" %}
+{% set custom_login_logo_height = "80px" %}
 {% set custom_login_bg = "/assets/images/login-bg.jpg" %}
-{% set custom_login_bg_blending = "screen" %}
+{% set custom_login_bg_blending = "multiply" %}

@@ -1,3 +1,14 @@
+## 1.0.9
+
+This release implements name changes (Sunrise is now Method), and includes minor fixes and enhacements.
+
+Changes:
+- ( build/ ) Updated the compiled Sunrise theme to v1.0.9
+- ( njk/assets/login.css ) Fixed a hard-coded text color for links in p#nav (now uses globals.custom_login_accent), and implemented the new globals.custom_login_btn_color variable (used for button and message text color)
+- ( njk/assets/login.js ) Tweaked the gradient set
+- ( njk/templates/\_globals-defaults.html ) Changed all name references to reflect the new theme name, added the new custom_login_btn_color variable
+- ( README.md ) Updated theme name references.
+
 ## 1.0.8
 
 This release includes minor bugfixes and adds njk files for all templates for correct class naming.

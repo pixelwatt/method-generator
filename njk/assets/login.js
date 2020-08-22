@@ -10,8 +10,9 @@
     states : {
         "default-state": {
             gradients: [
-            	['#dcc9d7', '#f5cfc5'],
-            	['#ffaf89', '#925d7a']
+            	['#4B7D62', '#4BFD9F'],
+                ['#585858', '#AEAEAE']
+
             ],
             transitionSpeed: 7000
         }
