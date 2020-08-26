@@ -99,6 +99,20 @@ function {{globals.code_prefix}}register_required_plugins() {
 			'slug'      => 'classic-editor',
 			'required'  => true,
 		),{% endif %}
+{% if globals.require_github_updater %}
+		array(
+			'name'      => 'GitHub Updater',
+			'slug'      => 'github-updater',
+			'source'    => 'https://github.com/afragen/github-updater/archive/master.zip',
+			'required'  => true,
+		),{% endif %}
+{% if globals.require_cmb2_roadway_segments %}
+		array(
+			'name'      => 'CMB2 Roadway Segments',
+			'slug'      => 'cmb2-roadway-segments',
+			'source'    => 'https://github.com/pixelwatt/cmb2-roadway-segments/archive/master.zip',
+			'required'  => true,
+		),{% endif %}
 
 	);
 
@@ -126,7 +140,7 @@ function {{globals.code_prefix}}register_required_plugins() {
 function {{globals.code_prefix}}scripts() {
 	wp_enqueue_style( '{{globals.code_textdomain}}', get_template_directory_uri() . '/theme.min.css', '', '{{globals.theme_version}}' );{% if globals.googlefonts_css_url %}
 	wp_enqueue_style( '{{globals.code_textdomain}}-google-fonts', '{{globals.googlefonts_css_url}}', '', null );{% endif %}
-	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', array( 'jquery' ), '{{globals.theme_version}}', false );{% if globals.fontawesome_kit_url %}
+	wp_enqueue_script( '{{globals.code_textdomain}}', get_template_directory_uri() . '/assets/js/scripts.min.js', array( 'jquery' ), '{{globals.theme_version}}', false );{% if globals.fontawesome_kit_url %}
 	wp_enqueue_script( '{{globals.code_textdomain}}-fontawesome', '{{globals.fontawesome_kit_url}}', false, null, false );{% endif %}
 {% if globals.jquery_version %}
 	if ( ! is_admin() ) {
@@ -782,7 +796,7 @@ function {{globals.code_prefix}}cmb2_metabox_include_default_page( $display, $me
 	// there is a front page set and we're on it!
 	return $is_it_basic;
 }
-add_filter( 'cmb2_show_on', 'cmb2_metabox_include_default_page', 10, 2 );
+add_filter( 'cmb2_show_on', '{{globals.code_prefix}}cmb2_metabox_include_default_page', 10, 2 );
 
 
 /*
@@ -834,7 +848,7 @@ function {{globals.code_prefix}}cmb2_metabox_include_front_page( $display, $meta
 	// there is a front page set and we're on it!
 	return $post_id == $front_page;
 }
-add_filter( 'cmb2_show_on', 'ed_metabox_include_front_page', 10, 2 );
+add_filter( 'cmb2_show_on', '{{globals.code_prefix}}cmb2_metabox_include_front_page', 10, 2 );
 
 
 /*

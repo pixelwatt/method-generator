@@ -1,17 +1,16 @@
 {# 
 	GLOBAL VARIABLES:
-	Use this file to reconfigure core components of the Method theme prior to building.
+	Use this file to reconfigure core components of the Sunrise theme prior to building.
 #}
 
 {# Theme Information #}
 {% set theme_name = "Method" %}
 {% set theme_uri = "https://github.com/pixelwatt/method" %}
 {% set theme_description = "A barebones foundation for custom theme development." %}
-{% set theme_version = "1.0.10" %}
+{% set theme_version = "1.0.9" %}
 {% set theme_author = "Rob Clark" %}
 {% set theme_author_uri = "https://robclark.io/" %}
 {% set theme_tags = "cmb2, bootstrap" %}
-{% set github_theme_uri = false %}
 
 {# Theme Support #}
 {% set theme_support_html5 = true %}
@@ -30,9 +29,7 @@
 
 {# Required Plugins #}
 {% set require_cmb2 = true %} {# RECOMMENDED #}
-{% set require_classic_editor = false %}
-{% set require_github_updater = false %}
-{% set require_cmb2_roadway_segments = false %}
+{% set require_classic_editor = true %}
 
 {# Code #}
 {% set code_textdomain = "method" %}

@@ -6,5 +6,6 @@ Version: {{globals.theme_version}}
 Author: {{globals.theme_author}}
 Author URI: {{globals.theme_author_uri}}
 Tags: {{globals.theme_tags}}
+{% if globals.github_theme_uri %}GitHub Plugin URI: {{globals.github_theme_uri}}{% endif %}
 
 */{% endblock %}
