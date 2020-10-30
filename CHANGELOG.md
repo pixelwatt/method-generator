@@ -1,3 +1,15 @@
+## 1.0.11
+
+Changes:
+* ( build/ ) Updated to v1.0.11
+* ( njk/assets/functions.php ) Fixed empty lines generated when not requiring all plugins to appears to WordPress coding standard gods
+* ( njk/assets/login.css ) Added styles to set a background image and color for body.login, removed styles for #bg-canvas, as it is no longer injected into the login page.
+* ( njk/templates/\_globals-defaults.html ) Updated to path for custom_login_logo to use the new svg logo in included in Method v1.0.11
+* ( njk/templates/\_globals-defaults.html ) Removed the custom_login_bg_blending option, as granim is no longer included or used for the login page.
+* ( njk/templates/\_globals-defaults.html ) Updated the path for custom_login_bg to no longer begin with a forward-slash.
+
+---
+
 ## 1.0.10
 
 Changes:
@@ -14,6 +26,8 @@ Changes:
 * ( gulpfile.js / package.json ) Removed a significant number of dependencies not needed for this this project.
 * ( gulpfile.js ) Renamed the "rebuild-sunrise" task to "rebuild-method"
 
+---
+
 ## 1.0.9
 
 This release implements name changes (Sunrise is now Method), and includes minor fixes and enhacements.
@@ -24,6 +38,8 @@ Changes:
 - ( njk/assets/login.js ) Tweaked the gradient set
 - ( njk/templates/\_globals-defaults.html ) Changed all name references to reflect the new theme name, added the new custom_login_btn_color variable
 - ( README.md ) Updated theme name references.
+
+---
 
 ## 1.0.8
 

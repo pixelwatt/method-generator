@@ -92,21 +92,18 @@ function {{globals.code_prefix}}register_required_plugins() {
 			'name'      => 'CMB2',
 			'slug'      => 'cmb2',
 			'required'  => true,
-		),{% endif %}
-{% if globals.require_classic_editor %}
+		),{% endif %}{% if globals.require_classic_editor %}
 		array(
 			'name'      => 'Classic Editor',
 			'slug'      => 'classic-editor',
 			'required'  => true,
-		),{% endif %}
-{% if globals.require_github_updater %}
+		),{% endif %}{% if globals.require_github_updater %}
 		array(
 			'name'      => 'GitHub Updater',
 			'slug'      => 'github-updater',
 			'source'    => 'https://github.com/afragen/github-updater/archive/master.zip',
 			'required'  => true,
-		),{% endif %}
-{% if globals.require_cmb2_roadway_segments %}
+		),{% endif %}{% if globals.require_cmb2_roadway_segments %}
 		array(
 			'name'      => 'CMB2 Roadway Segments',
 			'slug'      => 'cmb2-roadway-segments',
@@ -935,9 +932,70 @@ function {{globals.code_prefix}}register_page_default_metabox() {
 
 }
 
+/*
+Example CMB2 registration for a custom page template:
+
+add_action( 'cmb2_admin_init', '{{globals.code_prefix}}register_page_template_tmpname_metabox' );
+
+function {{globals.code_prefix}}register_page_template_tmpname_metabox() {
+	$prefix = '_{{globals.code_prefix}}';
+
+	$cmb_options = new_cmb2_box(
+		array(
+			'id'            => $prefix . 'metabox_page_template_tmpname',
+			'title'         => esc_html__( 'Template Options', 'cmb2' ),
+			'object_types'  => array( 'page' ),
+			'priority'     => 'high',
+			'show_on'      => array(
+				'key'   => 'page-template',
+				'value' => 'templates/page-template-tmpname.php',
+			),
+		)
+	);
+
+	{{globals.code_prefix}}load_cmb2_options( $cmb_options, array( 'elements' ) );
+
+}
+
+*/
+
+//======================================================================
+// 10. DASHBOARD / EDITOR OPTIMIZATIONS
+//======================================================================
+
+//-----------------------------------------------------
+// Remove editor button to add Ninja Forms
+//-----------------------------------------------------
+
+add_action( 'admin_head', '{{globals.code_prefix}}remove_add_new_nf_button' );
+
+function {{globals.code_prefix}}remove_add_new_nf_button() {
+	echo '<style>
+		#wp-content-media-buttons .button.nf-insert-form {display:none !important; visibility: hidden !important;}
+	</style>';
+}
+
+//-----------------------------------------------------
+// Remove sidebar metabox for appending a Ninja Form
+//-----------------------------------------------------
+
+add_action( 'add_meta_boxes', function() {
+	remove_meta_box( 'nf_admin_metaboxes_appendaform', ['page', 'post'], 'side' );
+}, 99 );
+
+
+//-----------------------------------------------------
+// Lower Yoast metabox priority
+//-----------------------------------------------------
+
+function {{globals.code_prefix}}lower_wpseo_priority( $html ) {
+	return 'low';
+}
+add_filter( 'wpseo_metabox_prio', '{{globals.code_prefix}}lower_wpseo_priority' );
+
 {% if globals.custom_login_enable %}
 //======================================================================
-// 10. LOGIN CUSTOMIZATION
+// 11. LOGIN CUSTOMIZATION
 //======================================================================
 
 //-----------------------------------------------------
@@ -951,27 +1009,10 @@ add_filter( 'login_headerurl', '{{globals.code_prefix}}custom_login_url' );
 
 
 //-----------------------------------------------------
-// Add a canvas element for Granim.
-//-----------------------------------------------------
-
-function {{globals.code_prefix}}add_html_content() {
-	echo '<canvas id="bg-canvas"></canvas>';
-}
-add_action( 'login_header', '{{globals.code_prefix}}add_html_content' );
-
-
-//-----------------------------------------------------
 // Enqueue scripts and styles for login.
 //-----------------------------------------------------
 
 function {{globals.code_prefix}}login_scripts() {
-	wp_enqueue_script( 'granim', get_template_directory_uri() . '/inc/granim/granim.js', array(), '1.0.0', false );
-	wp_register_script( '{{globals.code_textdomain}}-login', get_template_directory_uri() . '/login.js', array( 'granim' ), '1.0.0', true );
-	$js_array = array(
-		'template_dir' => get_template_directory_uri(),
-	);
-	wp_localize_script( '{{globals.code_textdomain}}-login', 'theme', $js_array );
-	wp_enqueue_script( '{{globals.code_textdomain}}-login' );
 	wp_enqueue_style( '{{globals.code_textdomain}}-login', get_template_directory_uri() . '/login.css' );
 }
 
