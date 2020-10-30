@@ -478,6 +478,16 @@ function {{globals.code_prefix}}get_term_array( $tax, $none = false ) {
 }
 
 
+//-----------------------------------------------------
+// Function to replace strings found in an array
+// src: https://www.php.net/manual/en/function.str-replace.php#95198
+//-----------------------------------------------------
+
+function {{globals.code_prefix}}str_replace_assoc( array $replace, $subject ) {
+	return str_replace( array_keys( $replace ), array_values( $replace ), $subject );   
+}
+
+
 //======================================================================
 // 6. CONTENT GENERATION FUNCTIONS
 //======================================================================
@@ -620,13 +630,16 @@ class {{globals.code_layoutclass}} {
 				case 'activated':
 					// Placeholder element. Should be removed from production theme.
 					$this->html .= '
-						<div id="{{globals.code_textdomain}}-activation">
-							<div class="container-fluid ' . {{globals.code_prefix}}get_class( 'full_width_container' ) . '">
-								<div class="row justify-content-center">
-									<div class="' . {{globals.code_prefix}}get_class( 'full_width_outer_col' ) . '">
-										<div class="text-center">
-										<h1 class="display-4">Up and running! <i class="far fa-thumbs-up"></i></h1>
-										<p class="lead">If I was in World War Two they\'d call me <strong><em>{{globals.code_textdomain}}</em></strong></p>
+						<div class="error404">
+							<div class="container-fluid">
+								<div class="row justify-content-center align-items-center">
+									<div class="col-12 col-sm-8 col-md-5 col-lg-4">
+										<div class="error404-content text-center">
+											<h1>Epic!</h1>
+											<br>
+											<h2>You\'re Up &amp Running.</h2>
+											<p>This site is now running a build of Method.</p>
+											<a href="https://github.com/pixelwatt/method" target="_blank" class="btn btn-lg btn-primary m-auto">Method on GitHub</a>
 										</div>
 									</div>
 								</div>
@@ -675,6 +688,17 @@ class {{globals.code_layoutclass}} {
 			}
 		}
 		return $output;
+	}
+
+	private function format_tags( $text ) {
+		$tags = array(
+			'[br]' => '<br>',
+			'[mbr]' => '<br class="d-inline d-md-none">',
+			'[dbr]' => '<br class="d-xs-none d-sm-none d-md-inline">',
+			'[strong]' => '<strong>',
+			'[/strong]' => '</strong>',
+		);
+		return {{globals.code_prefix}}str_replace_assoc( $tags, $text );
 	}
 
 	private function get_meta( $key ) {

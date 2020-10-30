@@ -26,9 +26,3 @@ gulp.task('rebuild-custom', function() {
 });
 
 gulp.task('build-custom', gulp.series('copy-build', 'rebuild-custom'));
-
-gulp.task('copy-build-to-local-dev', function() {
-  return gulp.src(['./build/**/*','!./.git']).pipe(gulp.dest('/Users/robclark/Dev/server1/spitfire.test/public_html/wp-content/themes/spitfire'));
-});
-
-gulp.task('_local-rebuild', gulp.series('rebuild-method', 'copy-build-to-local-dev'));

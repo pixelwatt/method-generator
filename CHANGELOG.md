@@ -1,3 +1,21 @@
+## 1.0.12
+
+Changes:
+* ( build/ ) Updated to v1.0.12
+* ( gulpfile.js ) Removed localdev functions.
+* ( njk/assets/assets/css/bootstrap/\_variables.scss ) Added the Bootstrap variables file and tied color/font variables to globals in \_globals-defaults.html
+* ( functions.php ) Added a new function, method_str_replace_assoc(), to find/replace strings using values from an associative array.
+* ( functions.php ) Modified markup for the layout class default 'active' component to look like the 404 template.
+* ( functions.php ) Added a new function to the layout class, format_tags(), for replacing format tags with html markup.
+* ( njk/assets/login.js ) Removed the login.js file as granim is no longer used for custom login pages.
+* ( njk/templates/\_globals-defaults.html ) Added formatting to the file make it easier to browse as more variables are added.
+* ( njk/templates/\_globals-defaults.html ) Added variables for Bootstrap's base color pallet, primary and secondary brand colors, and select features.
+* ( njk/templates/\_globals-defaults.html ) Added a variable, bootstrap_font_family_sans_serif, to prepend an additional sans-serif font family to Boostrap's default sans-serif font stack. Default: false
+* ( njk/templates/\_globals-defaults.html ) Added a variable, bootstrap_font_family_serif, that, if set to a serif font family, will add in a $font-family-serif variable into \_variables.scss, set to the provided family, and append Bootstrap 3's default serif stack to it.
+* ( njk/templates/\_globals-defaults.html ) Added a variable, bootstrap_font_family_theme, that, if set to a serif font family, will add in a $font-family-theme variable into \_variables.scss, set to the provided family
+
+---
+
 ## 1.0.11
 
 Changes:
