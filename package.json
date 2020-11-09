@@ -1,6 +1,6 @@
 {
   "name": "sunrise-builder",
-  "version": "1.0.11",
+  "version": "1.0.13",
   "description": "This project allows you to rapidly create custom builds of the Sunrise theme using Gulp and Nunjucks.",
   "main": "index.js",
   "scripts": {
