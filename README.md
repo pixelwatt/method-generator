@@ -31,5 +31,5 @@ For documentation on building with the Method theme (or a custom version of it),
 - [ ] Write full project documentation.
 - [ ] Add option to compile the theme without support for blog posts
 - [x] Include Bootstrap variables file as a njk template to allow fonts and core colors to be configured via the \_globals.html file.
-- [ ] Add method for uniform handeling of headlines.
+- [x] Add method for uniform handeling of headlines.
 - [ ] Add method for opening and closing sections of content that use uniform markup.
