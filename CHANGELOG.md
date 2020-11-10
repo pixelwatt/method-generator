@@ -1,3 +1,11 @@
+## 1.0.14
+
+Changes:
+* ( build/ ) Updated to v1.0.13
+* ( njk/assets/assets/css/bootstrap/\_variables.scss ) Rolled in Bootstrap v4.5.3 changes into the variables njk template so that generated assets will work with the v4.5.3 release used in Method.
+
+---
+
 ## 1.0.13
 
 Changes:
