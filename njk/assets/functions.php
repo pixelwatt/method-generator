@@ -768,7 +768,7 @@ class {{globals.code_layoutclass}} {
 		return;
 	}
 
-	private function unload_meta( $id ) {
+	private function unload_meta() {
 		$this->loaded_meta = array();
 		return;
 	}

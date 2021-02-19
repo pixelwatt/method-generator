@@ -1,7 +1,18 @@
+## 1.0.15
+
+Changes:
+* ( build/ ) Updated to v1.0.15
+* ( njk/assets/functions.php ) Fixed an issue with the unload_meta method in the layout class (an ID does not need to be passed to the method)
+* ( package.json ) Changed dependencies to latest-available versions.
+
+Please note: If you encounter a problem when installing dependencies, upgrade to the latest node release and reattempt installation.
+
+---
+
 ## 1.0.14
 
 Changes:
-* ( build/ ) Updated to v1.0.13
+* ( build/ ) Updated to v1.0.14
 * ( njk/assets/assets/css/bootstrap/\_variables.scss ) Rolled in Bootstrap v4.5.3 changes into the variables njk template so that generated assets will work with the v4.5.3 release used in Method.
 
 ---

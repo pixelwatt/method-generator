@@ -1,6 +1,6 @@
 {
   "name": "sunrise-builder",
-  "version": "1.0.13",
+  "version": "1.0.15",
   "description": "This project allows you to rapidly create custom builds of the Sunrise theme using Gulp and Nunjucks.",
   "main": "index.js",
   "scripts": {
@@ -9,9 +9,8 @@
   "author": "Rob Clark",
   "license": "",
   "devDependencies": {
-    "del": "^3.0.0",
-    "gulp": "^4.0.0",
-    "gulp-cli": "^2.0.1",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
     "gulp-notify": "^3.2.0",
     "gulp-nunjucks-render": "^2.2.3"
   }
