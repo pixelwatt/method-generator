@@ -34,4 +34,4 @@ For documentation on building with the Method theme (or a custom version of it),
 - [x] Add method for uniform handeling of headlines.
 - [ ] Add method for opening and closing sections of content that use uniform markup.
 - [ ] Upgrade Bootstrap to version 5 (may hold until out of beta).
-- [ ] Convert the layout class to an abstract class to allow for easy layout class upgrades.
+- [x] Convert the layout class to an abstract class to allow for easy layout class upgrades.

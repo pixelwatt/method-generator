@@ -21,6 +21,11 @@
 // 1. INITIAL SETUP
 //======================================================================
 
+//-----------------------------------------------------
+// Import the Method layout class so we can extend it.
+//-----------------------------------------------------
+
+require_once('class-method-layout.php');
 
 //-----------------------------------------------------
 // Import a custom navwalker for Bootstrap 4
@@ -445,7 +450,7 @@ function {{globals.code_prefix}}get_content( $id ) {
 //-----------------------------------------------------
 
 function {{globals.code_prefix}}check_key( $key ) {
-	$output = $fb;
+	$output = false;
 	if ( isset( $key ) ) {
 		if ( ! empty( $key ) ) {
 			$output = true;
@@ -521,11 +526,6 @@ function {{globals.code_prefix}}get_term_array( $tax, $none = false ) {
 }
 
 
-//-----------------------------------------------------
-// Function to replace strings found in an array
-// src: https://www.php.net/manual/en/function.str-replace.php#95198
-//-----------------------------------------------------
-
 function {{globals.code_prefix}}str_replace_assoc( array $replace, $subject ) {
 	return str_replace( array_keys( $replace ), array_values( $replace ), $subject );   
 }
@@ -536,51 +536,13 @@ function {{globals.code_prefix}}str_replace_assoc( array $replace, $subject ) {
 //======================================================================
 
 
-class {{globals.code_layoutclass}} {
-	private $elements = array();
-	private $meta = array();
-	private $loaded_meta = array();
-	private $opts = array();
-	private $id;
-	private $html;
-	private $modals;
-	private $scripts;
-	private $attr = array();
+class {{globals.code_layoutclass}} extends Method_Layout {
 
-	public function build_page( $pid = '', $archive = false ) {
+	protected function set_opts() {
 		$this->opts = get_option( '{{globals.code_prefix}}options' );
-		if ( true == $archive ) {
-			global $wp_query;
-			$this->attr['is_archive'] = true;
-			$this->attr['post_type'] = ( {{globals.code_prefix}}check_key( $wp_query->query_vars['post_type'] ) ? $wp_query->query_vars['post_type'] : 'post' );
-			if ( 'post' == $this->attr['post_type'] ) {
-				$this->attr['category'] = ( {{globals.code_prefix}}check_key( $wp_query->queried_object->name ) ? $wp_query->queried_object->name : '' );
-			}
-			$this->attr['taxonomy'] = ( {{globals.code_prefix}}check_key( $wp_query->query_vars['taxonomy'] ) ? $wp_query->query_vars['taxonomy'] : '' );
-			$this->determine_attributes();
-			$this->build_layout();
-			return $this->html . $this->modals . $this->scripts;
-		} elseif ( ( ! empty( $pid ) ) && ( false == $archive ) ) {
-			$this->attr['is_archive'] = false;
-			$this->attr['post_type'] = get_post_type( $this->id );
-			$this->id = $pid;
-			$this->meta = get_post_meta( $this->id );
-			if ( 'page' == $this->attr['post_type'] ) {
-				$fp = get_option( 'page_on_front' );
-				if ( $fp == $this->id ) {
-					$this->attr['is_front'] = true;
-				}
-			}
-			$this->determine_attributes();
-			$this->build_layout();
-			return $this->html . $this->modals . $this->scripts;
-		} else {
-			return false;
-		}
 	}
 
-
-	private function determine_attributes() {
+	protected function determine_attributes() {
 		global $wp_query;
 		if ( true == $this->attr['is_archive'] ) {
 			switch ( $this->attr['post_type'] ) {
@@ -615,16 +577,7 @@ class {{globals.code_layoutclass}} {
 		return;
 	}
 
-
-	private function build_layout() {
-		$this->build_header();
-		$this->build_components();
-		$this->build_footer();
-		return;
-	}
-
-
-	private function build_header() {
+	protected function build_header() {
 		$this->scripts .= '
 
 		';
@@ -634,38 +587,14 @@ class {{globals.code_layoutclass}} {
 		return;
 	}
 
-
-	private function build_footer() {
+	protected function build_footer() {
 		$this->html .= '
 		
 		';
 		return;
 	}
 
-
-	private function inject_modal( $mid, $mclass = '', $title, $content, $prefiltered = false, $lg = false, $scrollable = false ) {
-		$this->modals .= '
-			<div class="modal fade" id="' . $mid . '" tabindex="-1" role="dialog" aria-labelledby="' . $mid . 'Label" aria-hidden="true">
-				<div class="modal-dialog' . ( $scrollable ? ' modal-dialog-scrollable' : '' ) . ( $lg ? ' modal-lg' : '' ) . '" role="document">
-					<div class="modal-content">
-      					<div class="modal-header">
-        					<h5 class="modal-title" id="exampleModalLabel">' . $title . '</h5>
-        					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          						<span aria-hidden="true">&times;</span>
-        					</button>
-      					</div>
-      					<div class="modal-body">
-      						' . ( $prefiltered ? $content : {{globals.code_prefix}}filter_content( $content ) ) . '
-      					</div>  
-    				</div>
-  				</div>
-			</div>
-
-		';
-	}
-
-
-	private function build_components() {
+	protected function build_components() {
 		if ( true == $this->attr['is_archive'] ) {
 			global $wp_query;
 		}
@@ -698,132 +627,7 @@ class {{globals.code_layoutclass}} {
 		return;
 	}
 
-
-	private function array_to_ul( $array ) {
-		$array = maybe_unserialize( $array );
-		$output = '';
-
-		if ( ! empty( $array ) ) {
-			if ( is_array( $array ) ) {
-				$output .= '<ul>';
-				foreach ( $array as $item ) {
-					$output .= '<li>' . esc_html( $item ) . '</li>';
-				}
-				$output .= '</ul>';
-			}
-		}
-		return $output;
-	}
-
-	private function array_to_p( $array, $class = '' ) {
-		$array = maybe_unserialize( $array );
-		$output = '';
-
-		if ( ! empty( $array ) ) {
-			if ( is_array( $array ) ) {
-				$output .= '<p' . ( ! empty( $class ) ? ' class="' . $class . '"' : '' ) . '>';
-				$ac = count( $array );
-				$i = 1;
-				foreach ( $array as $item ) {
-					$output .= esc_html( $item ) . ( $i != $ac ? '<br>' : '' );
-					$i++;
-				}
-				$output .= '</p>';
-			}
-		}
-		return $output;
-	}
-
-	private function format_tags( $text ) {
-		$tags = array(
-			'[br]' => '<br>',
-			'[mbr]' => '<br class="d-inline d-md-none">',
-			'[dbr]' => '<br class="d-xs-none d-sm-none d-md-inline">',
-			'[strong]' => '<strong>',
-			'[/strong]' => '</strong>',
-			'[em]' => '<em>',
-			'[/em]' => '</em>',
-		);
-		return {{globals.code_prefix}}str_replace_assoc( $tags, $text );
-	}
-
-	private function get_headline( $key, $before, $after, $fallback = '' ) {
-		$output = '';
-		if ( ( $this->get_meta( $key ) ) || ( ! empty( $fallback ) ) ) {
-			$output = $before . ( $this->get_meta( $key ) ? $this->format_tags( esc_html( $this->get_meta( $key ) ) ) : $fallback ) . $after;
-		}
-		return $output;
-	}
-
-	private function get_loaded_headline( $key, $before, $after, $fallback = '' ) {
-		$output = '';
-		if ( ( $this->get_loaded_meta( $key ) ) || ( ! empty( $fallback ) ) ) {
-			$output = $before . ( $this->get_loaded_meta( $key ) ? $this->format_tags( esc_html( $this->get_loaded_meta( $key ) ) ) : $fallback ) . $after;
-		}
-		return $output;
-	}
-
-	private function load_meta( $id ) {
-		$this->loaded_meta = get_post_meta( $id );
-		return;
-	}
-
-	private function unload_meta() {
-		$this->loaded_meta = array();
-		return;
-	}
-
-	private function get_loaded_meta( $key ) {
-		$output = false;
-		if ( isset( $this->loaded_meta[ "{$key}" ][0] ) ) {
-			if ( ! empty( $this->loaded_meta[ "{$key}" ][0] ) ) {
-				$output = $this->loaded_meta[ "{$key}" ][0];
-			}
-		}
-		return $output;
-	}
-
-	private function get_serialized_loaded_meta( $key ) {
-		$output = false;
-		if ( isset( $this->loaded_meta[ "{$key}" ][0] ) ) {
-			if ( ! empty( $this->loaded_meta[ "{$key}" ][0] ) ) {
-				$output = maybe_unserialize( $this->loaded_meta[ "{$key}" ][0] );
-			}
-		}
-		return $output;
-	}
-
-	private function get_meta( $key ) {
-		$output = false;
-		if ( isset( $this->meta[ "{$key}" ][0] ) ) {
-			if ( ! empty( $this->meta[ "{$key}" ][0] ) ) {
-				$output = $this->meta[ "{$key}" ][0];
-			}
-		}
-		return $output;
-	}
-
-	private function get_serialized_meta( $key ) {
-		$output = false;
-		if ( isset( $this->meta[ "{$key}" ][0] ) ) {
-			if ( ! empty( $this->meta[ "{$key}" ][0] ) ) {
-				$output = maybe_unserialize( $this->meta[ "{$key}" ][0] );
-			}
-		}
-		return $output;
-	}
-
-	private function get_option( $key ) {
-		$output = false;
-		if ( isset( $this->opts[ "{$key}" ] ) ) {
-			if ( ! empty( $this->opts[ "{$key}" ] ) ) {
-				$output = $this->opts[ "{$key}" ];
-			}
-		}
-		return $output;
-	}
-
-	private function build_social_icons() {
+	protected function build_social_icons() {
 		$output = '';
 
 		$social_links = $this->get_option( 'social_accounts' );

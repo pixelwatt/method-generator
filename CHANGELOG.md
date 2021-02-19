@@ -1,3 +1,15 @@
+## 1.1.0
+
+This release supports the v1.1.0 release of the Method theme and its new abstract layout class.
+
+Changes:
+* ( build/ ) Updated to v1.1.0
+* ( njk/assets/functions.php ) Fixed a reference to an undeclared variable in the check_key() function.
+* ( njk/assets/functions.php ) Rewrote the theme layout class to extend the new Method_Layout class. This makes it possible to easily upgrade the core layout class as it's updated, since its now isolated and should not need to be directly edited.
+* ( package.json ) Fixed references to old project names.
+
+---
+
 ## 1.0.15
 
 Changes:

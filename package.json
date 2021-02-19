@@ -1,7 +1,7 @@
 {
-  "name": "sunrise-builder",
-  "version": "1.0.15",
-  "description": "This project allows you to rapidly create custom builds of the Sunrise theme using Gulp and Nunjucks.",
+  "name": "method-generator",
+  "version": "1.1.0",
+  "description": "This project allows you to rapidly create custom builds of the Method theme using Gulp and Nunjucks.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
