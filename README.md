@@ -33,5 +33,5 @@ For documentation on building with the Method theme (or a custom version of it),
 - [x] Include Bootstrap variables file as a njk template to allow fonts and core colors to be configured via the \_globals.html file.
 - [x] Add method for uniform handeling of headlines.
 - [ ] Add method for opening and closing sections of content that use uniform markup.
-- [ ] Upgrade Bootstrap to version 5 (may hold until out of beta).
+- [x] Upgrade Bootstrap to version 5.
 - [x] Convert the layout class to an abstract class to allow for easy layout class upgrades.

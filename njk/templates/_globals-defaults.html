@@ -10,7 +10,7 @@
 {% set theme_name = "Method" %}
 {% set theme_uri = "https://github.com/pixelwatt/method" %}
 {% set theme_description = "A barebones foundation for custom theme development." %}
-{% set theme_version = "1.1.0" %}
+{% set theme_version = "1.1.1" %}
 {% set theme_author = "Rob Clark" %}
 {% set theme_author_uri = "https://robclark.io/" %}
 {% set theme_tags = "cmb2, bootstrap" %}
@@ -60,7 +60,7 @@
 
 {% set code_textdomain = "method" %}
 {% set code_prefix = "method_" %}
-{% set code_layoutclass = "MethodLayout" %}
+{% set code_layoutclass = "MethodThemeLayout" %}
 
 
 {# ---------------------------------------------------------------- #}
@@ -107,47 +107,3 @@
 {% set custom_login_logo_width = "250px" %}
 {% set custom_login_logo_height = "80px" %}
 {% set custom_login_bg = "assets/images/login-bg.jpg" %}
-
-
-{# ---------------------------------------------------------------- #}
-{# Bootstrap Customization 											#}
-{# theme.scss must be recompiled for these changes to be reflected  #}
-{# ---------------------------------------------------------------- #}
-
-{# Base Colors:									#}
-{# --- provide a hex value 						#}
-{% set bootstrap_blue = "#007bff" %}
-{% set bootstrap_indigo = "#6610f2" %}
-{% set bootstrap_purple = "#6f42c1" %}
-{% set bootstrap_pink = "#e83e8c" %}
-{% set bootstrap_red = "#dc3545" %}
-{% set bootstrap_orange = "#fd7e14" %}
-{% set bootstrap_yellow = "#ffc107" %}
-{% set bootstrap_green = "#28a745" %}
-{% set bootstrap_teal = "#20c997" %}
-{% set bootstrap_cyan = "#17a2b8" %}
-
-{# Theme Colors:								#}
-{# --- sass variable recommended 				#}
-{% set bootstrap_primary = "$blue" %}
-{% set bootstrap_secondary = "$gray-600" %}
-
-{# Prepend Sans Serif Family:					#}
-{# --- provide a font family, or set false 		#}
-{% set bootstrap_font_family_sans_serif = false %}
-
-{# Optional Serif Variable:						#}
-{# --- provide a serif family, or set false 	#}
-{% set bootstrap_font_family_serif = false %}
-
-{# Optional Extra Family Variable:				#}
-{# --- provide a font family, or set false 		#}
-{% set bootstrap_font_family_theme = false %}
-
-{# Bootstrap Features:							#}
-{# --- must "wrap" in quotation marks 			#}
-{% set bootstrap_enable_caret = "true" %}
-{% set bootstrap_enable_rounded = "true" %}
-{% set bootstrap_enable_shadows = "false" %}
-{% set bootstrap_enable_gradients = "false" %}
-{% set bootstrap_enable_transitions = "true" %}

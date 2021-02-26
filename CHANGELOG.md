@@ -1,3 +1,9 @@
+## 1.1.1
+
+This update removes Bootstrap settings from globals and no longer generates a custom _variables.scss file. Variable overrides can more be set in the theme.scss file to avoid editing Bootstrap scss files.
+
+---
+
 ## 1.1.0
 
 This release supports the v1.1.0 release of the Method theme and its new abstract layout class.
