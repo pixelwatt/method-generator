@@ -24,7 +24,7 @@ To compile custom theme releases using the included gulp tasks, you'll need:
 
 ## Developing with Method
 
-For documentation on building with the Method theme (or a custom version of it), head over to the [theme project](https://github.com/pixelwatt/method).
+For documentation on building with the Method theme (or a custom version of it), head over to the [theme project](https://github.com/pixelwatt/method) and view the wiki.
 
 ## Tasks / Roadmap:
 - [x] Ensure that the compiled version of functions.php passes phpcs checks for Wordpress-core standards (aside from 2 minor issues)

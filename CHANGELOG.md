@@ -1,3 +1,9 @@
+## 1.1.2
+
+This release contains no major changes on the generator-side, but includes and support Method v1.1.2, which includes updates to the layout class.
+
+---
+
 ## 1.1.1
 
 This update removes Bootstrap settings from globals and no longer generates a custom _variables.scss file. Variable overrides can more be set in the theme.scss file to avoid editing Bootstrap scss files.
