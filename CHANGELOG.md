@@ -1,6 +1,12 @@
+## 1.1.3
+
+This release contains no major changes on the generator-side, but includes and supports Method v1.1.3, which includes several additions to the Method_Layout class.
+
+---
+
 ## 1.1.2
 
-This release contains no major changes on the generator-side, but includes and support Method v1.1.2, which includes updates to the layout class.
+This release contains no major changes on the generator-side, but includes and supports Method v1.1.2, which includes updates to the layout class.
 
 ---
 
