@@ -1,3 +1,11 @@
+## 1.1.4
+
+Changes:
+* ( build/ ) Updated to v1.1.4
+* ( njk/templates/_globals-defaults.html ) Updated the version number for 1.1.4
+
+---
+
 ## 1.1.3
 
 This release contains no major changes on the generator-side, but includes and supports Method v1.1.3, which includes several additions to the Method_Layout class.
