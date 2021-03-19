@@ -1,3 +1,11 @@
+## 1.1.5
+
+Changes:
+* ( build/ ) Updated to v1.1.5
+* ( njk/templates/_globals-defaults.html ) Updated the version number for 1.1.5
+
+---
+
 ## 1.1.4
 
 Changes:
