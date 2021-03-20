@@ -1,3 +1,12 @@
+## 1.1.6
+
+Changes:
+* ( build/ ) Updated to v1.1.6
+* ( njk/assets/functions.php ) Updated paths for 'tgm-plugin-activation' and 'wp-bootstrap-navwalker'
+* ( njk/templates/_globals-defaults.html ) Updated the version number for 1.1.6
+
+---
+
 ## 1.1.5
 
 Changes:

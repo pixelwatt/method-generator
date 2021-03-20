@@ -31,7 +31,7 @@ require_once('class-method-layout.php');
 // Import a custom navwalker for Bootstrap 4
 //-----------------------------------------------------
 
-require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
+require_once get_template_directory() . '/inc/wp-bootstrap-navwalker/class-wp-bootstrap-navwalker.php';
 
 
 //-----------------------------------------------------
@@ -82,7 +82,7 @@ add_image_size( '{{item.name}}', {{item.width}}, {{item.height}}, {{item.cropped
 // Configure required plugins
 //-----------------------------------------------------
 
-require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+require_once get_template_directory() . '/inc/tgm-plugin-activation/class-tgm-plugin-activation.php';
 
 add_action( 'tgmpa_register', '{{globals.code_prefix}}register_required_plugins' );
 
