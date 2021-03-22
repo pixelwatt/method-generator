@@ -1,3 +1,9 @@
+## 1.2.0
+
+This release splits the functions.php file out into several categorized files to support a more streamlined development workflow. These files are located under the /lib folder.
+
+---
+
 ## 1.1.6
 
 Changes:
