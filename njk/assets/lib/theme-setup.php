@@ -101,6 +101,12 @@ function {{globals.code_prefix}}register_required_plugins() {
 			'slug'      => 'cmb2-roadway-segments',
 			'source'    => 'https://github.com/pixelwatt/cmb2-roadway-segments/archive/master.zip',
 			'required'  => true,
+		),{% endif %}{% if globals.require_cmb2_mapbox %}
+		array(
+			'name'      => 'CMB2 Mapbox',
+			'slug'      => 'cmb2-mapbox',
+			'source'    => 'https://github.com/pixelwatt/cmb2-mapbox/archive/master.zip',
+			'required'  => true,
 		),{% endif %}
 
 	);

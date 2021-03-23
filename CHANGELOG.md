@@ -1,6 +1,26 @@
 ## 1.2.0
 
+This release includes several additions and bugfixes. Now, functions.php is broken out into several files in the /lib folder to support a more streamlined workflow.
 
+New Globals:
+* require_cmb2_mapbox - (default: false) If true, the theme will require the CMB2 Mapbox fieldtype plugins.
+* js_use_matchheight - (default: true) If true, the path to the matchheight library will be added to the array of scripts to combine via the scripts gulp task.
+* js_use_jarallax - (default: true) If true, the path to the jarallax library will be added to the array of scripts to combine via the scripts gulp task.
+* localdev_url - (default: method.test:8080) The local developement URL to set as the proxy for browsersync.
+
+Removed Globals:
+* social_options
+
+Other Changes:
+* ( build/ ) Updated to v1.2.0
+* ( njk/assets/gulpfile.js ) Method's gulpfile is now compiled by build/rebuild tasks, implementing support for the new js_use_matchheight, js_use_jarallax, and localdev_url globals
+* ( njk/assets/lib/class-theme-layout.php ) Removed the build_social_icons() method, which is now located in the Method_Layout class.
+* ( njk/assets/lib/cmb2-options-loader.php ) Added a $prefix variable, which is the name of the current options template, but with hypens instead of underscores.
+* ( njk/assets/lib/helper-functions.php ) The returned classes for 'full_width_outer_col' now includes the 'full-width-outer-col' class.
+* ( njk/assets/lib/helper-functions.php ) For both the method_get_post_array() and method_get_term_array() functions, the $none argument now defaults to being an empty string, with the function ignoring it if empty. If a non-empty string is provided, a "none" item will be added to the returned array as the first array value, with an empty key.
+* ( njk/assets/lib/helper-functions.php ) The method_get_content() function was removed. Instead, use: `method_filter_content( get_the_content( null, false, $post->ID ) )` (if outside the layout class) or `$this->filter_content( get_the_content( null, false, $this->id ) )` (if inside the layout class)
+* ( njk/assets/lib/theme-customization.php ) In the repeatable options group for social media accounts, the service is now picked via a select element and not radio buttons. Additionally, an option for _None_ was added, and is now the default.
+* ( njk/assets/lib/theme-support.php ) Added array for CMB2 Mapbox to potential required plugin arrays.
 
 ---
 

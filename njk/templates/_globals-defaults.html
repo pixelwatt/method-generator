@@ -52,6 +52,7 @@
 {% set require_classic_editor = false %}
 {% set require_github_updater = false %}
 {% set require_cmb2_roadway_segments = false %}
+{% set require_cmb2_mapbox = false %}
 
 
 {# ---------------------------------------------------------------- #}
@@ -64,36 +65,37 @@
 
 
 {# ---------------------------------------------------------------- #}
+{# Javascript Libraries 											#}
+{# ---------------------------------------------------------------- #}
+
+{% set js_use_matchheight = true %}
+{% set js_use_jarallax = true %}
+
+
+{# ---------------------------------------------------------------- #}
 {# Common CSS Classes 												#}
 {# ---------------------------------------------------------------- #}
 
 {% set css_classes = [
-	{ id: "full_width_outer_col", class: "col-12 col-sm-11" },
+	{ id: "full_width_outer_col", class: "full-width-outer-col col-12 col-sm-11" },
 	{ id: "full_width_container", class: "full-width-container" }
 ] %}
 
 
 {# ---------------------------------------------------------------- #}
-{# Social Media Link Support 										#}
+{# Local Development 										        #}
 {# ---------------------------------------------------------------- #}
 
-{% set social_options = [
-	{ id: "facebook", label: "Facebook", fa: "fab fa-facebook-f" },
-	{ id: "twitter", label: "Twitter", fa: "fab fa-twitter" },
-	{ id: "linkedin", label: "LinkedIn", fa: "fab fa-linkedin-in" },
-	{ id: "instagram", label: "Instagram", fa: "fab fa-instagram" },
-	{ id: "pinterest", label: "Pinterest", fa: "fab fa-pinterest" },
-	{ id: "youtube", label: "YouTube", fa: "fab fa-youtube" }
-] %}
+{% set localdev_url = "method.test:8080" %}
 
 
 {# ---------------------------------------------------------------- #}
 {# Other 															#}
 {# ---------------------------------------------------------------- #}
 
-{% set jquery_version = "3.5.1" %}
+{% set jquery_version = "" %}
 {% set googlefonts_css_url = "" %}
-{% set fontawesome_kit_url = "" %}
+{% set fontawesome_kit_url = "" %} {# Not recommended, but available #)
 
 
 {# ---------------------------------------------------------------- #}

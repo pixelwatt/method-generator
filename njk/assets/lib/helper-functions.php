@@ -71,7 +71,7 @@ if ( ! function_exists( 'array_key_first' ) ) {
 // Get an array of post IDs and titles
 //-----------------------------------------------------
 
-function {{globals.code_prefix}}get_post_array( $type, $none = false ) {
+function {{globals.code_prefix}}get_post_array( $type, $none = '' ) {
 	//lets create an array of boroughs to loop through
 	if ( ! empty( $none ) ) {
 		$output[0] = $none;
@@ -98,7 +98,7 @@ function {{globals.code_prefix}}get_post_array( $type, $none = false ) {
 // Get an array of term ids and names
 //-----------------------------------------------------
 
-function {{globals.code_prefix}}get_term_array( $tax, $none = false ) {
+function {{globals.code_prefix}}get_term_array( $tax, $none = '' ) {
 	//lets create an array of boroughs to loop through
 	if ( ! empty( $none ) ) {
 		$output[0] = $none;

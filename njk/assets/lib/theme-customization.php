@@ -64,11 +64,17 @@ function {{globals.code_prefix}}register_theme_options_metabox() {
 		array(
 			'name' => 'Service',
 			'id'   => 'service',
-			'type' => 'radio',
-			'default' => 'facebook',
+			'type' => 'select',
+			'show_option_none' => true,
+			'default' => '',
 			'desc' => __( 'Which service are you adding a link for?', '{{globals.code_textdomain}}' ),
-			'options' => array({% for item in globals.social_options %}
-				'{{item.id}}' => esc_attr__( '{{item.label}}', '{{globals.code_textdomain}}' ),{% endfor %}
+			'options' => array(
+				'facebook' => esc_attr__( 'Facebook', '{{globals.code_textdomain}}' ),
+				'twitter' => esc_attr__( 'Twitter', '{{globals.code_textdomain}}' ),
+				'linkedin' => esc_attr__( 'LinkedIn', '{{globals.code_textdomain}}' ),
+				'instagram' => esc_attr__( 'Instagram', '{{globals.code_textdomain}}' ),
+				'pinterest' => esc_attr__( 'Pinterest', '{{globals.code_textdomain}}' ),
+				'youtube' => esc_attr__( 'YouTube', '{{globals.code_textdomain}}' ),
 			),
 		)
 	);
