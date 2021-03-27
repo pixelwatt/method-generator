@@ -1,3 +1,9 @@
+## 1.2.1
+
+This release updates _globals-defaults.html to reflect the version number changes for Method v1.2.1.
+
+---
+
 ## 1.2.0
 
 This release includes several additions and bugfixes. Now, functions.php is broken out into several files in the /lib folder to support a more streamlined workflow.
