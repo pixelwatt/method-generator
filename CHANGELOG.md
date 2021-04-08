@@ -1,3 +1,9 @@
+## 1.2.2
+
+Updated version numbers to v1.2.2
+
+---
+
 ## 1.2.1
 
 This release updates _globals-defaults.html to reflect the version number changes for Method v1.2.1.
