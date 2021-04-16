@@ -1,3 +1,9 @@
+## 1.2.3
+
+This release adds missing dependencies to the package.json file.
+
+---
+
 ## 1.2.2
 
 Updated version numbers to v1.2.2
