@@ -1,6 +1,6 @@
 {
   "name": "method-generator",
-  "version": "1.2.2",
+  "version": "1.2.4",
   "description": "This project allows you to rapidly create custom builds of the Method theme using Gulp and Nunjucks.",
   "main": "index.js",
   "scripts": {

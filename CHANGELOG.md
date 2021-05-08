@@ -1,3 +1,13 @@
+## 1.2.4
+
+Changes:
+* ( build/ ) Updated to Method v1.2.4
+* ( njk/assets/functions.php ) Updated path to reflect new Bootstrap navwalker.
+* ( njk/assets/gulpfile.js ) Removed several unneeded dependencies and made minor tweaks to gulp tasks.
+* ( njk/assets/package.json ) Removed several unneeded dependencies.
+
+---
+
 ## 1.2.3
 
 This release adds missing dependencies to the package.json file.
