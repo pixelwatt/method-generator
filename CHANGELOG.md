@@ -1,3 +1,11 @@
+## 1.2.5
+
+Changes:
+* ( build/ ) Updated to Method v1.2.5
+* ( njk/templates/_globals-defaults.html ) Updated the version number for 1.2.5
+
+---
+
 ## 1.2.4
 
 Changes:
