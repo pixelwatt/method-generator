@@ -1,3 +1,10 @@
+## 1.3.1
+
+Changes:
+* ( build/ ) Updated to Method v1.3.1, which includes several third-party library updates.
+
+---
+
 ## 1.3.0
 
 This release supports Method v1.3.0, which implements the ability to build layouts inside template files while using layout class methods and components as needed.
