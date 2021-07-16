@@ -1,3 +1,12 @@
+## 1.3.2
+
+Changes:
+* ( build/ ) Updated to Method v1.3.2.
+* ( njk/templates/_globals-defaults.html ) Updated the version number for 1.3.2, and changed the login logo height to account for the new login logo.
+* ( README.md ) Replaced documentation with wiki link.
+
+---
+
 ## 1.3.1
 
 Changes:
