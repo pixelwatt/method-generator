@@ -13,7 +13,7 @@ gulp.task('rebuild-method', function() {
 });
 
 gulp.task('copy-build', function() {
-  return gulp.src(['./build/**/*','!./.git']).pipe(gulp.dest('./custom'));
+  return gulp.src(['./build/**/*','!./build/.git','!./build/node_modules','!./build/package-lock.json'],{ dot: true }).pipe(gulp.dest('./custom'));
 });
 
 gulp.task('rebuild-custom', function() {

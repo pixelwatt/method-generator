@@ -1,3 +1,11 @@
+## 1.3.3
+
+Changes:
+* ( build/ ) Updated to Method v1.3.3.
+* ( gulpfile.js ) Implemented a fix so that custom builds should no longer contain dev folders, and should contain the .gitignore file.
+
+---
+
 ## 1.3.2
 
 Changes:
