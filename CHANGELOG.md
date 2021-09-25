@@ -1,3 +1,12 @@
+## 1.3.4
+
+Changes:
+* ( build/ ) Updated to Method v1.3.4, which adds a filter and action to allow for easily adding custom format tags, and adds an optional $fallback argument to the get_meta(), get_loaded_meta(), and get_option() methods.
+* ( njk/assets/lib/admin-customization.php ) Implemented the 'method_after_tags_dialog_html' action in the prefix_admin_footer_function() function.
+* ( gulpfile.js ) Implemented a fix so that custom builds should no longer contain dev folders, and should contain the .gitignore file.
+
+---
+
 ## 1.3.3
 
 Changes:

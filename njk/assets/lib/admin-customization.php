@@ -36,6 +36,9 @@ function {{globals.code_prefix}}admin_footer_function() {
 		  <hr>
 		  <h5>[br]</h5>
 		  <p>This tags allows you to insert a line break. Use <code>[br]</code> for the line break to appear on all devices, <code>[mbr]</code> for the line break to only appear on mobile, and <code>[dbr]</code> for the break to only appear on desktop.<br><em>(Ex: "I want this text on line 1,[br]and this text on line 2.")</em></p>
+	';
+	do_action( 'method_after_tags_dialog_html' );
+	echo '
 		</div>
 	';
 }
