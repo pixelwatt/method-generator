@@ -107,6 +107,18 @@ function {{globals.code_prefix}}register_required_plugins() {
 			'slug'      => 'cmb2-mapbox',
 			'source'    => 'https://github.com/pixelwatt/cmb2-mapbox/archive/master.zip',
 			'required'  => true,
+		),{% endif %}{% if globals.require_method_alerts %}
+		array(
+			'name'      => 'Method Alerts',
+			'slug'      => 'method-alerts',
+			'source'    => 'https://github.com/pixelwatt/method-alerts/archive/main.zip',
+			'required'  => true,
+		),{% endif %}{% if globals.require_elliston %}
+		array(
+			'name'      => 'Elliston',
+			'slug'      => 'elliston',
+			'source'    => 'https://github.com/theboldagency/elliston/archive/master.zip',
+			'required'  => true,
 		),{% endif %}
 
 	);

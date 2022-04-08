@@ -1,3 +1,15 @@
+## 1.3.6
+
+Changes:
+* ( build/ ) Now pointing to v1.3.6 commit
+* Implemented Method v1.3.6 revisions to njk templates (see release notes: https://github.com/pixelwatt/method/blob/v1.3.6/CHANGELOG)
+* Added ability to specify theme license (by way of Velpeo's pull request), and added to style.css
+* Changed the theme_license global to "GNU General Public License v2 or later" (mirroring Automattic)
+* Added new bool to globals: require_method_alerts (if true, the custom theme build will require Method Alerts to be installed - https://github.com/pixelwatt/method-alerts)
+* Added new bool to globals: require_elliston (if true, the custom theme build will require Elliston to be installed - https://github.com/theboldagency/elliston)
+
+---
+
 ## 1.3.5
 
 Changes:
