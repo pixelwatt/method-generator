@@ -1,3 +1,17 @@
+## 1.3.7
+
+This release implements Method v1.3.7 changes and includes minor code optimizations.
+
+Changes:
+* ( build/ ) Now pointing to v1.3.7 commit (generated with this release of Generator)
+* ( njk/assets/lib/admin-customization.php ) Added wrap to hide format tags dialogue markup while admin js is loading.
+* ( njk/templates/_globals-defaults.html ) Added new variable, css_prefix, for specifying a prefix to use in theme.scss when referencing theme css classes and css ids
+* ( njk/templates/_globals-defaults.html ) The "method_1400_600" custom image size name is now generated using the code_prefix variable (so now a custom code_prefix value will be reflected in this name) 
+* ( njk/templates/_globals-defaults.html ) The CSS classes for full_width_outer_col and full_width_container are now prefixed with the value of the code_prefix variable
+* ( new file: njk/templates/theme.scss ) A njk template for theme.scss was added so that the correct full width container class name is generated
+
+---
+
 ## 1.3.6
 
 Changes:
