@@ -75,6 +75,8 @@ function {{globals.code_prefix}}register_theme_options_metabox() {
 				'instagram' => esc_attr__( 'Instagram', '{{globals.code_textdomain}}' ),
 				'pinterest' => esc_attr__( 'Pinterest', '{{globals.code_textdomain}}' ),
 				'youtube' => esc_attr__( 'YouTube', '{{globals.code_textdomain}}' ),
+				'twitch' => esc_attr__( 'Twitch', '{{globals.code_textdomain}}' ),
+				'tiktok' => esc_attr__( 'TikTok', '{{globals.code_textdomain}}' ),
 			),
 		)
 	);

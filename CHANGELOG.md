@@ -1,3 +1,9 @@
+## 1.3.8
+
+Implemented Method v1.3.8 changes.
+
+---
+
 ## 1.3.7
 
 This release implements Method v1.3.7 changes and includes minor code optimizations.
