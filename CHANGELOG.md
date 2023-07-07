@@ -1,3 +1,10 @@
+## 1.4.0
+
+Changes:
+* ( build/ ) Updated to Method v1.4.0
+
+---
+
 ## 1.3.9
 
 Changes:
