@@ -113,6 +113,18 @@ function {{globals.code_prefix}}register_required_plugins() {
 			'slug'      => 'method-alerts',
 			'source'    => 'https://github.com/pixelwatt/method-alerts/archive/main.zip',
 			'required'  => true,
+		),{% endif %}{% if globals.require_method_gallery %}
+		array(
+			'name'      => 'Method Gallery',
+			'slug'      => 'method-gallery',
+			'source'    => 'https://github.com/pixelwatt/method-gallery/archive/main.zip',
+			'required'  => true,
+		),{% endif %}{% if globals.require_method_podcast %}
+		array(
+			'name'      => 'Method Podcast',
+			'slug'      => 'method-podcast',
+			'source'    => 'https://github.com/pixelwatt/method-podcast/archive/main.zip',
+			'required'  => true,
 		),{% endif %}{% if globals.require_elliston %}
 		array(
 			'name'      => 'Elliston',
