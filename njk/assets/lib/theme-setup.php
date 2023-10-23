@@ -66,6 +66,17 @@ add_action( 'wp_enqueue_scripts', '{{globals.code_prefix}}scripts' );
 
 
 //-----------------------------------------------------
+// Set option key for Method_Utility class
+//-----------------------------------------------------
+
+function {{globals.code_prefix}}method_utility_option_key_callback( $string ) {
+    // (maybe) modify $string.
+    return '{{globals.code_prefix}}options';
+}
+add_filter( 'method_utility_option_key', '{{globals.code_prefix}}method_utility_option_key_callback', 10, 1 );
+
+
+//-----------------------------------------------------
 // Configure required plugins
 //-----------------------------------------------------
 
