@@ -70,13 +70,15 @@ function {{globals.code_prefix}}register_theme_options_metabox() {
 			'desc' => __( 'Which service are you adding a link for?', '{{globals.code_textdomain}}' ),
 			'options' => array(
 				'facebook' => esc_attr__( 'Facebook', '{{globals.code_textdomain}}' ),
-				'twitter' => esc_attr__( 'Twitter', '{{globals.code_textdomain}}' ),
+				'twitter' => esc_attr__( 'Twitter (X)', '{{globals.code_textdomain}}' ),
 				'linkedin' => esc_attr__( 'LinkedIn', '{{globals.code_textdomain}}' ),
 				'instagram' => esc_attr__( 'Instagram', '{{globals.code_textdomain}}' ),
 				'pinterest' => esc_attr__( 'Pinterest', '{{globals.code_textdomain}}' ),
 				'youtube' => esc_attr__( 'YouTube', '{{globals.code_textdomain}}' ),
 				'twitch' => esc_attr__( 'Twitch', '{{globals.code_textdomain}}' ),
 				'tiktok' => esc_attr__( 'TikTok', '{{globals.code_textdomain}}' ),
+				'threads' => esc_attr__( 'Threads', '{{globals.code_textdomain}}' ),
+				'bluesky' => esc_attr__( 'Bluesky', '{{globals.code_textdomain}}' ),
 			),
 		)
 	);

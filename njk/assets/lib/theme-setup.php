@@ -136,6 +136,12 @@ function {{globals.code_prefix}}register_required_plugins() {
 			'slug'      => 'method-podcast',
 			'source'    => 'https://github.com/pixelwatt/method-podcast/archive/main.zip',
 			'required'  => true,
+		),{% endif %}{% if globals.require_method_people_grid %}
+		array(
+			'name'      => 'Method People Grid',
+			'slug'      => 'method-people-grid',
+			'source'    => 'https://github.com/pixelwatt/method-people-grid/archive/main.zip',
+			'required'  => true,
 		),{% endif %}{% if globals.require_elliston %}
 		array(
 			'name'      => 'Elliston',
@@ -161,4 +167,58 @@ function {{globals.code_prefix}}register_required_plugins() {
 
 	tgmpa( $plugins, $config );
 }
+
+
+//-----------------------------------------------------
+// Function for conditionally enabling the block editor
+// for specific posts. Uncomment and modify as needed.
+//-----------------------------------------------------
+/* 
+function {{globals.code_prefix}}enable_block_editor_for_post( $use_block_editor, $post ) {
+	$output = false;
+	$id = $post->ID;
+	$pt = get_post_type( $id );
+	if ( 'page' == $pt ) {
+		$template = get_post_meta( $id, '_wp_page_template', true );
+		if ( 'templates/page-template-mytemplate.php' == $template ) {
+			$output = true;
+		}
+	}
+	return $output;
+}
+
+add_filter( 'use_block_editor_for_post', '{{globals.code_prefix}}enable_block_editor_for_post', 10, 2 );
+*/
+
+
+//-----------------------------------------------------
+// Function for condigitally suppressing specific
+// WordPress features, mainly the editor. Uncomment
+// and modify as needed.
+//-----------------------------------------------------
+/*
+function {{globals.code_prefix}}remove_editor() {
+	if ( isset( $_GET['post'] ) ) {
+		$id = $_GET['post'];
+		$pt = get_post_type( $id );
+		if ( 'page' == $pt ) {
+			$template = get_post_meta( $id, '_wp_page_template', true );
+			$front_page = get_option( 'page_on_front' );
+			if ( $id == $front_page ) {
+				remove_post_type_support( 'page', 'editor' );
+			}
+			switch ( $template ) {
+				case 'templates/page-template-gateway.php':
+					remove_post_type_support( 'page', 'editor' );
+					break;
+				default:
+					# code...
+					break;
+			}
+		}
+	}
+	return;
+}
+add_action( 'init', '{{globals.code_prefix}}remove_editor' );
+*/
 {% endblock %}
