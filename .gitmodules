@@ -1,3 +1,3 @@
-[submodule "build"]
-	path = build
-	url = https://pixelwatt@github.com/pixelwatt/method.git
+[submodule "method-child"]
+	path = method-child
+	url = https://github.com/pixelwatt/method-child.git
