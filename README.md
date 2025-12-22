@@ -1,7 +1,7 @@
 # Method Generator
 
-![Method Generator Banner](https://pixelwatt.com/assets/mg_banner.jpg)
+![Method Generator Banner](https://robclark.io/github/methodGenerator.jpg)
 
-This project allows you to rapidly create custom builds of the [Method](https://github.com/pixelwatt/method) theme using Gulp and Nunjucks.
+This project allows you to rapidly create custom builds of the [Method Child](https://github.com/pixelwatt/method-child) theme using Gulp and Nunjucks.
 
-For extensive documentation on how to use Method Generator, check out the [new wiki](https://pixelwatt.github.io/method-wiki/docs/method-generator/getting-started).
+Documentation for v2 coming soon.
