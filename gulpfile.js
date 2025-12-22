@@ -9,11 +9,11 @@ gulp.task('rebuild-method', function() {
       path: ['./njk/templates'],
       inheritExtension: true,
     }))
-    .pipe(gulp.dest('./build'))
+    .pipe(gulp.dest('./method-child'))
 });
 
 gulp.task('copy-build', function() {
-  return gulp.src(['./build/**/*','!./build/.git','!./build/node_modules','!./build/package-lock.json'],{ dot: true }).pipe(gulp.dest('./custom'));
+  return gulp.src(['./method-child/**/*','!./method-child/.git','!./method-child/node_modules','!./method-child/package-lock.json'],{ dot: true }).pipe(gulp.dest('./custom'));
 });
 
 gulp.task('rebuild-custom', function() {

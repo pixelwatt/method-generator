@@ -1,7 +1,7 @@
 {
   "name": "method-generator",
-  "version": "1.4.4-prerelease",
-  "description": "This project allows you to rapidly create custom builds of the Method theme using Gulp and Nunjucks.",
+  "version": "v2-1.0.0-beta2",
+  "description": "This project allows you to rapidly create custom builds of the Method child theme using Gulp and Nunjucks.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

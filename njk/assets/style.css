@@ -7,6 +7,4 @@ License: {{globals.theme_license}},
 Author: {{globals.theme_author}}
 Author URI: {{globals.theme_author_uri}}
 Tags: {{globals.theme_tags}}
-{% if globals.github_theme_uri %}GitHub Theme URI: {{globals.github_theme_uri}}{% endif %}
-
-*/{% endblock %}
+Template: method{% endblock %}

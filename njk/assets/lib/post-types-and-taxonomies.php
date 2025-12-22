@@ -2,6 +2,8 @@
 
 //======================================================================
 // CUSTOM POST TYPES
+//
+// To use the block editor, make sure to include "show_in_rest"
 //======================================================================
 
 
@@ -39,7 +41,8 @@ function {{globals.code_prefix}}news_init() {
 		'hierarchical'       => false,
 		'menu_position' 	 => 5,
 		'menu_icon'			 => 'dashicons-megaphone',
-		'supports'           => array( 'title' , 'editor' )
+		'supports'           => array( 'title' , 'editor' ),
+		'show_in_rest'       => true,
 	);
 
 	register_post_type( 'news', $args );

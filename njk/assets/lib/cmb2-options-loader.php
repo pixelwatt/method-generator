@@ -19,7 +19,7 @@ function {{globals.code_prefix}}load_cmb2_options( &$obj, $temps ) {
 				$obj->add_field(
 					array(
 						'name'     => __( 'Headline', '{{globals.code_textdomain}}' ),
-						'desc'     => __( {{globals.code_prefix}}get_tags_badge() . 'Provide a headline for this item.', '{{globals.code_textdomain}}' ),
+						'desc'     => __( 'Provide a headline for this item.', '{{globals.code_textdomain}}' ),
 						'id'   => '_{{globals.code_prefix}}example_headline',
 						'type'     => 'text',
 					)
