@@ -8,6 +8,12 @@ gulp.task('rebuild-method', function() {
     .pipe(nunjucksRender({
       path: ['./njk/templates'],
       inheritExtension: true,
+      envOptions: {
+        autoescape: false,
+        trimBlocks: false,
+        lstripBlocks: false,
+        noCache: true,
+      },
     }))
     .pipe(gulp.dest('./method-child'))
 });
@@ -21,6 +27,12 @@ gulp.task('rebuild-custom', function() {
     .pipe(nunjucksRender({
       path: ['./njk/templates'],
       inheritExtension: true,
+      envOptions: {
+        autoescape: false,
+        trimBlocks: false,
+        lstripBlocks: false,
+        noCache: true,
+      },
     }))
     .pipe(gulp.dest('./custom'))
 });
