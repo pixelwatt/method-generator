@@ -5,6 +5,42 @@
 //======================================================================
 
 //-----------------------------------------------------
+// Optionally, register a custom block pattern category
+// (or categories) if you intend to programmatically
+// add patterns to the patterns directory of this theme
+//-----------------------------------------------------
+/*
+function {{globals.code_prefix}}register_pattern_categories() {
+    register_block_pattern_category(
+        '{{globals.code_textdomain}}-page-components',
+        array( 'label' => __( 'Page Components', '{{globals.code_textdomain}}' ) )
+    );
+}
+
+add_action( 'init', '{{globals.code_prefix}}register_pattern_categories' );
+*/
+
+//-----------------------------------------------------
+// Optionally, register custom block categories if you
+// intend to build custom blocks for this theme.
+//-----------------------------------------------------
+/*
+add_filter( 'block_categories_all' , function( $categories ) {
+
+    $new_category = array(
+        'slug'  => '{{globals.code_textdomain}}-blocks',
+        'title' => '{{globals.theme_name}} Blocks'
+    );
+
+    // Prepend the new category to the beginning of the array.
+    array_unshift( $categories, $new_category );
+
+    return $categories;
+
+}, 25 );
+*/
+
+//-----------------------------------------------------
 // Register global stylesheet
 //-----------------------------------------------------
 
@@ -29,7 +65,9 @@ add_action('after_setup_theme', function() {
 
 
 //-----------------------------------------------------
-// Remove core block patterns from the block editor
+// Remove core block patterns from the block editor.
+// Comment out the following line to include core
+// block patterns.
 //-----------------------------------------------------
 
 remove_theme_support( 'core-block-patterns' );
@@ -66,6 +104,34 @@ $btn_styles = array(
 foreach ($btn_styles as $style) {
     register_block_style('method/theme-button', $style);
 }
+*/
+
+
+//-----------------------------------------------------
+// Optionally, register secondary button styles
+//-----------------------------------------------------
+/*
+function {{globals.code_prefix}}theme_button_styles( $styles ) {
+    $theme_styles = array(
+        '' => 'Default',
+        'small' => 'Small',
+        'large' => 'Large',
+    );
+    return $theme_styles;
+}
+add_filter( 'method_block_theme_button_styles', '{{globals.code_prefix}}theme_button_styles', 10, 1 );
+*/
+
+
+//-----------------------------------------------------
+// Optionally, register a label for secondary theme 
+// button styles
+//-----------------------------------------------------
+/*
+function {{globals.code_prefix}}theme_button_styles_label( $styles ) {
+    return 'Button Size';
+}
+add_filter( 'method_block_theme_button_styles_label', '{{globals.code_prefix}}theme_button_styles_label', 10, 1 );
 */
 
 
