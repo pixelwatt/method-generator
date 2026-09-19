@@ -78,13 +78,13 @@ remove_theme_support( 'core-block-patterns' );
 // of heading blocks
 //-----------------------------------------------------
 /*
-$heading_styles = array(
+$styles = array(
     array('name' => 'as-h1', 'label' => 'H1 Styles'),
     array('name' => 'as-h2', 'label' => 'H2 Styles'),
     array('name' => 'as-h3', 'label' => 'H3 Styles'),
 );
 
-foreach ($heading_styles as $style) {
+foreach ($styles as $style) {
     register_block_style('core/heading', $style);
     register_block_style('core/post-title', $style);
     register_block_style('core/query-title', $style);
@@ -96,12 +96,12 @@ foreach ($heading_styles as $style) {
 // Optionally, register theme button styles
 //-----------------------------------------------------
 /*
-$btn_styles = array(
+$styles = array(
     array('name' => 'enclosed', 'label' => 'Enclosed'),
     array('name' => 'icon-only', 'label' => 'Icon Only'),
 );
 
-foreach ($btn_styles as $style) {
+foreach ($styles as $style) {
     register_block_style('method/theme-button', $style);
 }
 */
@@ -157,22 +157,17 @@ add_filter( 'method_block_theme_label_styles', '{{globals.code_prefix}}theme_but
 // button block (otherwise, options hidden in editor)
 //-----------------------------------------------------
 /*
-function {{globals.code_prefix}}theme_button_icons( $styles ) {
-    $theme_icons = array(
-        '' => array(
-            'svg' => '',
-            'label' => 'None',
-        ),
-        'chevron-left' => array(
-            'svg' => '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/></svg>',
-            'label' => 'Chevron (Left)',
-        ),
-        'chevron-right' => array(
-            'svg' => '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/></svg>',
-            'label' => 'Chevron (Right)',
-        ),
+function {{globals.code_prefix}}theme_icons( $icons ) {
+    
+    $icons['chevron-left'] = array(
+        'svg' => '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/></svg>',
+        'label' => 'Chevron (Left)',
     );
-    return $theme_icons;
+    $icons['chevron-right'] = array(
+        'svg' => '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/></svg>',
+        'label' => 'Chevron (Right)',
+    );
+    return $icons;
 }
-add_filter( 'method_block_theme_button_icons', '{{globals.code_prefix}}theme_button_icons', 10, 1 );
+add_filter( 'method_theme_icons', '{{globals.code_prefix}}theme_icons', 10, 1 );
 */{% endblock %}

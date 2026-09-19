@@ -46,7 +46,7 @@ function {{globals.code_prefix}}register_custom_options( $cmb_options ) {
 			'type'     => 'title',
 		)
 	);
-    
+}   
 */
 
 

@@ -7,4 +7,5 @@ License: {{globals.theme_license}},
 Author: {{globals.theme_author}}
 Author URI: {{globals.theme_author_uri}}
 Tags: {{globals.theme_tags}}
-Template: method{% endblock %}
+Template: method
+*/{% endblock %}
